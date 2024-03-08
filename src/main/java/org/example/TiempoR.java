@@ -8,8 +8,7 @@ public record TiempoR(LocalDate fecha) {
     public static TiempoR ahora() {
         return new TiempoR(LocalDate.now());
     }
-
-
+    
     public String obtenerFechaLarga() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE d 'de' MMMM 'de' yyyy");
         return fecha.format(formatter);
