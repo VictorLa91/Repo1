@@ -1,11 +1,6 @@
 package prueba;
 
-import org.example.Participante;
 import org.junit.jupiter.api.Test;
-
-import java.util.Collections;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class PruebaTest {
 
