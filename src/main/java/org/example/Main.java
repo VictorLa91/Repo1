@@ -1,5 +1,6 @@
 package org.example;
 
+import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -16,22 +17,26 @@ public class Main {
 
         // Objeto Anemico solo tiene metodos para obtener y setear los datos
         TiempoAnemico tiempoAnemico = new TiempoAnemico();
-        System.out.println("Fecha larga (Anémico): " + tiempoAnemico.obtenerFechaLarga());
-        System.out.println("Fecha corta (Anémico): " + tiempoAnemico.obtenerFechaCorta());
+        LocalDate fecha = tiempoAnemico.getFecha();
+        // Ahora uso una clase que esta para convertir
+        Formato conversor = new Formato();
+        conversor.obtenerFechaCorta(fecha);
+        System.out.println("Fecha larga (Anémico): " + conversor.obtenerFechaCorta(fecha));
+        System.out.println("Fecha corta (Anémico): " + conversor.obtenerFechaLarga(fecha));
 
         // Prueba objeto no anemico. Tiene algunos metodos ademas de los getter y setter
         TiempoNoAnemico tiempoNoAnemico = new TiempoNoAnemico();
-        tiempoNoAnemico.imprimirFechaLarga();
+        System.out.println(tiempoNoAnemico.imprimirFechaLarga());
         tiempoNoAnemico.sumarDias(2);
-        tiempoNoAnemico.imprimirFechaCorta();
+        System.out.println(tiempoNoAnemico.imprimirFechaCorta());
         tiempoNoAnemico.restarDias(5);
-        tiempoNoAnemico.imprimirFechaCorta();
-        tiempoNoAnemico.imprimirFechaLarga();
-        tiempoNoAnemico.imprimirFechaCorta();
+        System.out.println(tiempoNoAnemico.imprimirFechaCorta());
+        System.out.println(tiempoNoAnemico.imprimirFechaLarga());
+        System.out.println(tiempoNoAnemico.imprimirFechaCorta());
         tiempoNoAnemico.sumarMinutos(10);
-        tiempoNoAnemico.imprimirHoraActual();
+        System.out.println(tiempoNoAnemico.imprimirHoraActual());
         tiempoNoAnemico.restarMinutos(15);
-        tiempoNoAnemico.imprimirHoraActual();
+        System.out.println(tiempoNoAnemico.imprimirHoraActual());
 
 
         // Es es una clase de tipo record. Segun lo que entendi es que son clases con
@@ -50,6 +55,9 @@ public class Main {
         // cree otro objeto solo para usar el equals que no es "escrito como codigo"
         // en la clase records
         System.out.println(tiempoActual.equals(tiempo2));
+
+
     }
+
 
 }

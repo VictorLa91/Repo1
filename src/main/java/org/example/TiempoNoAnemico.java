@@ -13,19 +13,19 @@ public class TiempoNoAnemico {
         this.horaActual = LocalTime.now();
     }
 
-    public void imprimirFechaLarga() {
+    public String imprimirFechaLarga() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE d 'de' MMMM 'de' yyyy");
-        System.out.println(fecha.format(formatter));
+        return fecha.format(formatter);
     }
 
-    public void imprimirFechaCorta() {
+    public String imprimirFechaCorta() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        System.out.println(fecha.format(formatter));
+        return fecha.format(formatter);
     }
 
-    public void imprimirHoraActual() {
+    public String imprimirHoraActual() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        System.out.println("Hora actual: " + horaActual.format(formatter));
+        return horaActual.format(formatter);
     }
 
     public void sumarMinutos(int minutos) {
